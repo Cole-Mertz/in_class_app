@@ -17,23 +17,10 @@ app.use(bodyParser.json());
 //tables
 // =============================================================
 var tables = [
-  {
-    name:"Test Tester",
-    phone: "456-7891",
-    email: "test@gmail.com",
-    uniqueId:"bloop -table"
-  }
 
 
 ];
 var waitlist = [
-  {
-    name:"Test Tester",
-    phone: "456-7891",
-    email: "test@gmail.com",
-    uniqueId:"bloop -waitlist"
-  }
-
 
 ];
 
@@ -65,7 +52,7 @@ app.get("/api/waitlist", function(req, res) {
 });
 
 // Create New Characters - takes in JSON input
-app.("/make", function(req, res) {
+app.get("/make", function(req, res) {
   res.sendFile(path.join(__dirname, "make.html"));
 
 });
@@ -76,13 +63,13 @@ app.post("/api/tables", function(req, res) {
   var newReservation = req.body;
   if(tables.length>4){
     waitlist.push(newReservation);
-    alert('New Reservation Added!');
+    //alert('New Reservation Added!');
   }
   else {
     tables.push(newReservation);
-    alert('You are on the waitlist!');
+   // alert('You are on the waitlist!');
   }
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.redirect(path.join(__dirname, "view.html"));
 
 });
 
