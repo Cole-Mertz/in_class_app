@@ -56,5 +56,34 @@
     </footer>
   </div>
 
+  <script type="text/javascript">
+  
+        $.get("/api/tables" , function(data) {
+
+          for (var i = 0; i < data.length; i++) {
+            var dataRow = "<h2><span class='label label-primary'>";
+               dataRow += (i + 1);
+               dataRow += "</span> | ";
+               dataRow += data[i].uniqueId;
+               dataRow += " </h2>";
+            $("#tableSection").append(dataRow);
+          }
+        });
+
+
+        $.get("/api/waitlist" , function(data) {
+
+          for (var i = 0; i < data.length; i++) {
+            var dataRow = "<h2><span class='label label-primary'>";
+               dataRow += (i + 1);
+               dataRow += "</span> | ";
+               dataRow += data[i].uniqueId;
+               dataRow += " </h2>";
+            $("#waitlistSection").append(dataRow);
+          }
+        });
+
+  </script>
+
 </body>
 </html>
