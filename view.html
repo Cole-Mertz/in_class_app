@@ -22,12 +22,35 @@
         <a href="/make"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
         <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
       </div>
-
     </div>
 
+  <div class="row">
+      <div class="col-lg-12">
+
+        <!-- Current Tables in Use -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Current Reservations</h4>
+          </div>
+          <div class="panel-body" id="tableSection">
+          </div>
+        </div>
+
+        <!-- Waiting List Panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Waiting List</h4>
+          </div>
+          <div class="panel-body" id="waitlistSection">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
     <footer class="footer">
       <div class="container">
-          <p><a href="/api/tables">Clear Table</a> |<a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+          <p><a href="/api/tables">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
       </div>
     </footer>
 
