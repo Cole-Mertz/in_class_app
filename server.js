@@ -21,7 +21,7 @@ var tables = [
     name:"Test Tester",
     phone: "456-7891",
     email: "test@gmail.com",
-    id:"bloop -table"
+    uniqueId:"bloop -table"
   }
 
 
@@ -31,7 +31,7 @@ var waitlist = [
     name:"Test Tester",
     phone: "456-7891",
     email: "test@gmail.com",
-    id:"bloop -waitlist"
+    uniqueId:"bloop -waitlist"
   }
 
 
@@ -72,7 +72,18 @@ app.("/make", function(req, res) {
 
 app.post("/api/tables", function(req, res) {
   //res.sendFile(path.join(__dirname, "make.html"));
-  console.log(req);
+
+  var newReservation = req.body;
+  if(tables.length>4){
+    waitlist.push(newReservation);
+    alert('New Reservation Added!');
+  }
+  else {
+    tables.push(newReservation);
+    alert('You are on the waitlist!');
+  }
+  res.sendFile(path.join(__dirname, "view.html"));
+
 });
 
 // Starts the server to begin listening
