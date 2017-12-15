@@ -61,25 +61,18 @@ app.get("/api/tables", function(req, res) {
 
 app.get("/api/waitlist", function(req, res) {
   //return JSON object of waitlist
-
+  res.send(waitlist);
 });
 
 // Create New Characters - takes in JSON input
-app.get("/make", function(req, res) {
+app.("/make", function(req, res) {
   res.sendFile(path.join(__dirname, "make.html"));
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body-parser middleware
-  // var newcharacter = req.body;
-  // newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
 
-  // console.log(newcharacter);
+});
 
-  // characters.push(newcharacter);
-
-  // res.json(newcharacter);
-
-  res.sendFile(path.join(__dirname, "view.html"));
-
+app.post("/api/tables", function(req, res) {
+  //res.sendFile(path.join(__dirname, "make.html"));
+  console.log(req);
 });
 
 // Starts the server to begin listening
